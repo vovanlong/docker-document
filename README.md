@@ -311,6 +311,6 @@ Nếu các bạn muốn deploy một cái app chạy bằng Rails bằng Capitan
 
 Mình suggest các bạn nên đọc [bài này](https://viblo.asia/p/huong-dan-deploy-ung-dung-ruby-on-rails-len-server-aws-ec2-su-dung-gem-capistrano-puma-va-nginx-Eb85oXDWK2G#_add-ssh-key-authentication-7) của trang viblo.
 
-Cảm ơn các bạn đã đọc bài viết đâu tay của mình <3
+Cảm ơn các bạn đã đọc bài viết đầu tay của mình. <3
 
 Long vui vẻ.
