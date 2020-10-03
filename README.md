@@ -19,7 +19,7 @@ Trong tình thế khó khăn nhất, Boss đi kiểm tra tiến độ,bảo cài
 
 - Đó là câu chuyện có thật ai cũng đã từng trải qua, Docker được tạo ra giúp chúng ta cài đặt môi trường đồng bộ với project hiện tại. Tránh mất thời gian fix những lỗi ở môi trường system. Đây là ưu điểm chính Docker mang đến cho developer, doanh nghiệp công nghệ.
 
-- Cái gì cũng có nhược điểm, Docker khá là nặng, tốn khá là nhiều tiền vào việc nâng cấp hệ thống để dùng docker(nâng ram, thêm cpu, ...), nên việc chọn Docker làm việc triển khai, build, đóng gói sản phẩm cũng phải đẳng đo xem "túi" của Khách Hàng có đủ rộng không.
+- Cái gì cũng có nhược điểm, Docker khá là nặng, tốn khá là nhiều tiền vào việc nâng cấp hệ thống để dùng docker(nâng ram, thêm cpu, ...), nên việc chọn Docker làm việc triển khai, build, đóng gói sản phẩm cũng phải đắng đo xem "túi" của Khách Hàng có đủ rộng không.
 
 ## Dockerfile
 
