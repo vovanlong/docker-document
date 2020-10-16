@@ -1,4 +1,4 @@
-# Docker & DockerFile sương sương
+# Tạo một VPS (Virtual Private Server) bằng Docker & DockerFile
 
 Thế giới ngày càng hiện đại và phát triển, đi theo nó cũng là công nghệ, các thư viện sử dụng, môi trường triển khai cũng thay đổi. Để tránh sự không đồng bộ lúc cài đặt, triển khai hệ thống đống nhất, tránh xảy ra lỗi deployment, thì một dự án open platform được ra đời, đó là docker
 
@@ -20,6 +20,11 @@ Trong tình thế khó khăn nhất, Boss đi kiểm tra tiến độ,bảo cài
 - Đó là câu chuyện có thật ai cũng đã từng trải qua, Docker được tạo ra giúp chúng ta cài đặt môi trường đồng bộ với project hiện tại. Tránh mất thời gian fix những lỗi ở môi trường system. Đây là ưu điểm chính Docker mang đến cho developer, doanh nghiệp công nghệ.
 
 - Cái gì cũng có nhược điểm, Docker khá là nặng, tốn khá là nhiều tiền vào việc nâng cấp hệ thống để dùng docker(nâng ram, thêm cpu, ...), nên việc chọn Docker làm việc triển khai, build, đóng gói sản phẩm cũng phải đắng đo xem "túi" của Khách Hàng có đủ rộng không.
+
+## Một số khái niệm chính:
+- `Docker Hub`: dịch vụ lưu trữ giúp chứa các Docker image. Tương tự như kho lưu trữ source code như git, `Docker hub` có vai trò lưu trữ những image đã build sẵn muốn dùng lại chỉ cần pull về và sử dụng.
+- `Docker image`: một dạng tập hợp các tệp của ứng dụng, được tạo ra bởi Docker engine. Nội dung của các Docker image sẽ không bị thay đổi khi di chuyển. Docker image được dùng để chạy các Docker Container.
+- `Docker container`: Một dạng runtime của các Docker image, dùng để làm môi trường chạy ứng dụng.
 
 ## Dockerfile
 
@@ -194,7 +199,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 RUN useradd -ms /bin/bash -p 123123 longvv
 
-EXPOSE 22
+EXPOSE 22 3000
 CMD ["/usr/sbin/sshd", "-D"]
 ```
 
@@ -214,7 +219,7 @@ Tiếp theo mình dùng `RUN` để cài cách package cơ bản, chúng ta thư
 RUN echo 'root:toor' | chpasswd
 ```
 
-Mình tạo một account gồm `USERID`, và `PASSWORD` cho con ubuntu của mình.
+Mình muốn thay đổi password của user default root để dễ sử dụng
 
 ```bash
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -222,7 +227,7 @@ RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/s
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 ```
 
-Cách lệnh tiếp theo mình xác thực, phân quyền account mình vừa mới tạo cho hệ thống
+Cách lệnh tiếp theo mình xác thực, phân quyền account mình vừa mới đổi password
 
 Có 2 cái lệnh hơi rườm rà ở đây:
 
